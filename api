@@ -1,0 +1,45 @@
+$ API for Supplychain Management System
+
+@ / 
+input - None
+output - [HTML] Node Running..
+
+@ /latest_block
+input - None
+output - [JSON] Last 50 blocks in blockchain
+
+@ /mine
+input - [GET] proof = $number
+output - [JSON] result of your submitted proof
+
+@ /block/<height>
+input - [GET] height(Block index or height)
+output - [JSON] Entire block for requested height
+
+@ /hash/<hash>
+input - [GET] hash( Scaned data or Produt hash)
+output - [JSON] List of all history of the product
+
+@ /otid/<hash>
+input - [GET] hash (hash of particular transfer of ownership)
+output - [JSON] proof of ownership transfer
+
+@ /initiate
+input - [POST] raw data with (from,to,key,data) <- input keys in the form of json
+output - [JSON] result for your submitted data
+
+@ /transfer_ownership
+input - [POST] hash = hash (Scaned data or Produt hash) , to = address to send , key = private key of current owner
+output - [JSON] result for your submitted data
+
+@ /difficulty
+input - [GET] None
+output - [TEXT] current difficulty
+
+@ /height
+input - [GET] None
+output - [TEXT] height of the current block
+
+@ /verify_ownership
+input - [POST] hash = hash (Scaned data or Produt hash) , key = private key of current owner
+output - [JSON] result for your submitted data
